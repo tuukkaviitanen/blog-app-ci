@@ -22,7 +22,7 @@ jobs:
 
       - name: Install frontend dependencies
         run: npm install
-        working-directory: /frontend
+        working-directory: ./frontend
 
       - name: Check backend style
         run: npm run lint

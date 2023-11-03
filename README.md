@@ -12,7 +12,7 @@ The hosting service is free tier so it might take some time to load at first.
 
 ## CI/CD
 
-The project uses GitHub Actions to run a Deployment workflow every time code is pushed (or pulled) to `main` branch or a pull request is opened.
+The project uses GitHub Actions to run a deployment workflow every time code is pushed (or pulled) to `main` branch or a pull request is opened.
 
 The workflow is separated into three jobs.
 

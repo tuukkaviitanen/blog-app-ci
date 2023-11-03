@@ -16,6 +16,8 @@ app.use(cors());
 app.use(express.json());
 app.use(middleware.tokenParser);
 
+app.use(express.static('./frontend/dist'));
+
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);

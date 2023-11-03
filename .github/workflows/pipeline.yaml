@@ -60,7 +60,7 @@ jobs:
 
   deployment:
     needs: [run_tests, tag_release]
-    runs-on: ubumtu-20.04
+    runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: Deploy to Render

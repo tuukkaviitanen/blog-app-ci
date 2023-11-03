@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 require('express-async-errors');
 const cors = require('cors');
 const { MONGODB_URI, NODE_ENV } = require('./utils/config');
@@ -27,6 +28,10 @@ if (NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing');
   app.use('/api/testing', testingRouter);
 }
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/frontend/dist/index.html'));
+});
 
 app.use(middleware.errorHandler);
 

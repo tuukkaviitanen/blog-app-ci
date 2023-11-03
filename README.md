@@ -45,6 +45,8 @@ Requires following environment variables:
 
 These can be set in a .env file. There is a .env.template file for reference.
 
+If you want the backend to serve the front and as well, you need to follow the setup in `frontend/README.md`
+
 ### npm scripts
 - npm start
   - Runs project in production mode

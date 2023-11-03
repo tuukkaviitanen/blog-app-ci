@@ -1,0 +1,39 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '19'
+
+      - name: Install backend dependencies
+        run: npm install
+
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: /frontend
+
+      - name: Check backend style
+        run: npm run lint
+
+      - name: Check frontend style
+        run: npm run lint
+        working-directory: /frontend
+
+      - name: Run backend tests
+        run: npm test
+
+      - name: Run frontend tests
+        run: npm test
+        working-directory: /frontend

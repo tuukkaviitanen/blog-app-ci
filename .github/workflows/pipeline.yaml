@@ -29,11 +29,11 @@ jobs:
 
       - name: Check frontend style
         run: npm run lint
-        working-directory: /frontend
+        working-directory: ./frontend
 
       - name: Run backend tests
         run: npm test
 
       - name: Run frontend tests
         run: npm test
-        working-directory: /frontend
+        working-directory: ./frontend
